@@ -690,7 +690,14 @@
 			</div>
 		</div>
 	</form>
-	
+	<script type="text/javascript">
+	$('#priview').click(function() {
+		 var url = "${pageContext.request.contextPath}/project/projectInfo?idx=" + $('#idx').val();
+	     var title = "popup";
+	     var status = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=500, height=600, top=50,left=550";
+	     window.open(url,title,status);
+	});
+</script>
 	<script src="https://cdn.tiny.cloud/1/6d0eescgzo66t0hqfeu0aeu5fyxbu2c0415q0gzufzi1uyaa/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
