@@ -11,7 +11,7 @@
 <!-- css -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link href="${pageContext.request.contextPath }/resources/harVest_css/projectUpload.css" rel="stylesheet">
-<!-- js 파일로 떼기 -->
+<!-- js -->
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/harVest_js/jquery-3.6.3.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/harVest_js/Upload.js"></script>
 <!-- 사진 미리보기 및 정렬 -->
@@ -57,7 +57,6 @@
 							
 								<button class="top_btn top_button saveBtn">
 									<span>임시저장</span>
-									<!-- <span>심사요청</span> -->
 								</button>
 							</div>
 						</div>
