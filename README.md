@@ -5,7 +5,6 @@
 > 대표적인 크라우드펀딩 사이트인 <b>텀블벅</b>을 벤치마킹하여 개발하였습니다.   
      
 <br>
-<br>
      
 ## 1. 제작 기간 & 참여 인원   
 - 2023년 02월 01일 ~ 2023년 03월 17일 | 탐프로젝트(8명)   
@@ -24,12 +23,10 @@
 - 사용 API : TinyMCE API / DateRangePicker API   
 
 <br>
-<br>
    
 ### 프로젝트 ERD   
 ![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcktkjo%2Fbtr77QXX5ir%2FcLrLuF3JjbdKmpB63KBDW1%2Fimg.png)
    
-<br>
 <br>
     
 ### 프로젝트 화면   
@@ -46,7 +43,7 @@
    
 ![img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbJuRSw%2Fbtr8kIXW8aP%2FI9T7lmEeObdIUh5K3CyNK1%2Fimg.png)   
    
-<br>
+
 <br>
 
 ### 작성 코드   
@@ -59,3 +56,4 @@
 [views](./Harvest/src/main/webapp/WEB-INF/views/creator)    
 [OpenBank API](./Harvest/src/main/java/com/itwillbs/openbank)   
    
+<br>
