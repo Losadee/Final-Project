@@ -9,7 +9,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/harVest_js/jquery-3.6.3.js"></script>
 <title>accountList</title>
 <script type="text/javascript">
-//부모창에 값 전달
 $(document).ready(function() {
 	
 	$('.btn').click(function() {
