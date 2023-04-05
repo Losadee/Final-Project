@@ -25,6 +25,7 @@
 </c:if>
 	<!-- page-header -->
   	<jsp:include page="../inc/header.jsp"></jsp:include>
+	
   	<input type="hidden" name="id" value="${sessionScope.id}">
   	<div class="layout">
   		<div class="leftImage"></div>
@@ -46,9 +47,6 @@
 							    <c:if test="${not empty img}">
 									<img class="imageWrap" src="${pageContext.request.contextPath}/resources/upload/${fn:split(img,'&')[0]}">
 								</c:if>
-<%-- 								<c:if test="${empty img}"> --%>
-<!-- 									<img class="imageWrap"> -->
-<%-- 								</c:if> --%>
 							</div>
 							<p>${projectList.TITLE }</p>
 						</div>
