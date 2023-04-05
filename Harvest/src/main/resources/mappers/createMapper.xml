@@ -10,9 +10,8 @@
 		FROM PROJECT_TB
 		WHERE ID = #{id}
 		  AND STATUS = 'PJT03'
-<!--   		LIMIT #{startRow}, #{pageSize} -->
 	</select>
-	<!-- 수정 -->
+
 	<select id="getProject" parameterType="map" resultType="hashMap">
 		SELECT P.*
           	 , DATE_ADD(END, INTERVAL 9 DAY) AS ADJDATE
@@ -27,7 +26,7 @@
 		 WHERE P.IDX = #{idx}
 	</select>
 
-    <insert id="insertProject" parameterType="map">
+        <insert id="insertProject" parameterType="map">
            INSERT INTO PROJECT_TB (
                       IDX   
                     , ID 
@@ -74,18 +73,18 @@
                     , STATUS
                   ) 
               VALUES ( 
-              		   IFNULL( (SELECT IDX
-						      FROM (
-						      		SELECT IDX 
-						      		  FROM PROJECT_TB
-						             WHERE IDX = #{idx}) A )
-						 , (SELECT IDX
-				              FROM ( 
-				             		SELECT IFNULL(MAX(CAST(IDX AS UNSIGNED)), 0) + 1 AS IDX
-   				 			  		  FROM PROJECT_TB) B )
-            		  )
-                 	  , #{id}
-                 	  <if test='!"".equals(creNm)'> 
+		       IFNULL( (SELECT IDX
+				  FROM (
+					 SELECT IDX 
+					   FROM PROJECT_TB
+					  WHERE IDX = #{idx}) A )
+				, (SELECT IDX
+				     FROM ( 
+					     SELECT IFNULL(MAX(CAST(IDX AS UNSIGNED)), 0) + 1 AS IDX
+					       FROM PROJECT_TB) B )
+			     )
+                     , #{id}
+                     <if test='!"".equals(creNm)'> 
                      , #{creNm}  
                      </if>
                      <if test='!"".equals(crePro) and crePro != null'>    
@@ -96,7 +95,7 @@
                      </if>
                      , (SELECT CATEGORY_CD
                      	   FROM (SELECT CATEGORY_CD
- 								   FROM CATEGORY_TB
+ 				  FROM CATEGORY_TB
                                  WHERE CATEGORY_NM = #{category}) CATEGORY)
                      <if test='!"".equals(title)'> 
                      , #{title}
@@ -105,9 +104,9 @@
                      , #{productNm}
                      </if>
                      <if test='!"".equals(img1) and img1 != null'>
-				      , #{img1}
-				      </if> 
-				     <if test='!intro.equals("")'>       
+		     , #{img1}
+		     </if> 
+		     <if test='!intro.equals("")'>       
                      , #{intro}  
                      </if>
                      <if test='!budget.equals("")'>
@@ -131,24 +130,24 @@
                      , #{status}
                      )
              ON DUPLICATE KEY
-		  UPDATE ID = #{id}
-                <if test='!"".equals(creNm)'>   
+		      UPDATE ID = #{id}
+                           <if test='!"".equals(creNm)'>   
 		  	   , CRE_NM 	 = #{creNm}
 		  	   </if>
 		  	   <if test='!"".equals(crePro) and crePro != null'>  
 			   , CRE_PRO     = #{crePro}
 			   </if>
-               <if test='!"".equals(creIntro) '>   
+                           <if test='!"".equals(creIntro) '>   
 			   , CRE_INTRO   = #{creIntro}
 			   </if>
 			   , CATEGORY    = (SELECT CATEGORY_CD
-                     	  			  FROM (SELECT CATEGORY_CD
- 								              FROM CATEGORY_TB
-                                            WHERE CATEGORY_NM = #{category}) CATEGORY)
-		       <if test='!"".equals(title)'>  
-		       , TITLE       = #{title}
-		       </if>
-		       <if test='!"".equals(productNm)'>  
+                     	  		      FROM (SELECT CATEGORY_CD
+ 						      FROM CATEGORY_TB
+                                                     WHERE CATEGORY_NM = #{category}) CATEGORY)
+		          <if test='!"".equals(title)'>  
+		          , TITLE       = #{title}
+		          </if>
+		          <if test='!"".equals(productNm)'>  
 			   , PRODUCT_NM  = #{productNm}
 			   </if>
 			    <if test='!"".equals(img1) and img1 != null'>  
@@ -176,7 +175,7 @@
 			   , END         = #{end}
 			   </if>
 			   , STATUS		 = #{status}
-    </insert>
+        </insert>
    
 	<select id="getCategoryList" resultType="java.lang.String">
 		SELECT CATEGORY_NM
