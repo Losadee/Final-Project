@@ -3,7 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- Mapper.xml 만들 때 참고용, 아래 namespace 수정해서 쓰세요! -->
 <mapper namespace="com.itwillbs.mappers.CreateMapper">
 	<select id="getProjectList" parameterType="map" resultType="hashMap">
 		SELECT IDX, TITLE, IMG1
